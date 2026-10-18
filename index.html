@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html><head><title>Directory Listing</title><style>body{font-family:Arial;margin:20px;color:white;background-color:black;}a{display:block;margin:8px 0}</style></head><body>
+<h1>Files</h1><ul id="list"></ul>
+<script>fetch('.').then(r=>r.text()).then(html=>{let parser=new DOMParser(),doc=parser.parseFromString(html,'text/html'),links=[...doc.querySelectorAll('a')].map(a=>a.textContent).filter(f=>f&&f!=='..'&&f!=='.');document.getElementById('list').innerHTML=links.map(f=>'<li><a href="'+f+'">'+f+'</a></li>').join('');})</script>
+</body></html>
